@@ -24,7 +24,7 @@ def f_afficher_utilisation_socket():
 #       para : aucun
 #
 #       do:
-#           creer le socket serveur et ecrit l'adresse IP dans un fichier texte (connexion ainsi plus facile)
+#           creer le socket serveur
 #
 #       return : socket_serveur
 #
@@ -103,7 +103,7 @@ def f_attendre_message(para_socket_client):
 
 ###########################################################################################################################################
 #
-#           f_attendre_message()
+#           f_envoyer_message()
 #
 #       para : socket client, message
 #
