@@ -47,13 +47,14 @@ def f_afficher_commande():
 ##########################################################################################################################################
 
 def f_attendre_reponse_robot(para_socket_client):
-    message = para_socket_client.recv(1024)
-    message = message.decode('utf8')
 
-    if message == '0':
-        print("Le robot est occupe, il execute l'action aue vous lui avez demande")
-    elif message == '1':
-        print('Le robot a fini l action')
+    message_robot = '0'
+
+    while message_robot != '1':
+        message_robot = connexion.f_attendre_message(para_socket_client)
+        print('Le robot execute l action')
+
+    print("Le robot a execute l'action, il est pret a executer une nouvelle action.")
 
 ##########################################################################################################################################
 #
@@ -100,26 +101,29 @@ def f_gestion_robot(para_socket_client):
         # SINON SI l'utilisateur a rentre 'avancer', il veut faire avancer le robot
         #
         elif commande == 'avancer':
-            print('Le robot avance')
+            print('Envoie de la commande avancer au robot')
             connexion.f_envoyer_message(para_socket_client, 'avancer')
 
         #
         # SINON SI l'utilisateur a rentre 'reculer', il veut faire reculer le robot
         #
         elif commande == 'reculer':
-            print('Le robot recule')
-            
+            print('Envoie de la commande reculer au robot')
+            connexion.f_envoyer_message(para_socket_client, 'reculer')
+
         #
         # SINON SI l'utilisateur a rentre 'gauche', il veut faire tourner le robot a gauche
         #
         elif commande == 'gauche':
-            print('Le robot tourne a gauche')
+            print('Envoie de la commande gauche au robot')
+            connexion.f_envoyer_message(para_socket_client, 'gauche')
 
         #
         # SINON SI l'utilisateur a rentre 'droite', il veut faire tourner le robot a droite
         #
         elif commande == 'droite':
-            print('Le robot tourne a droite')
+            print('Envoie de la commande droite au robot')
+            connexion.f_envoyer_message(para_socket_client, 'droite')
 
         #
         # SINON l'utilisateur a rentre autre chose (ne fait rien)
@@ -127,7 +131,6 @@ def f_gestion_robot(para_socket_client):
         else:
             pass
 
-        f_attendre_reponse_robot(para_socket_client)
         f_attendre_reponse_robot(para_socket_client)
 
 ##########################################################################################################################################
