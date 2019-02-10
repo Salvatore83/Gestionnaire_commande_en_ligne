@@ -108,7 +108,7 @@ def f_gestion_robot(para_socket_client):
         #
         elif commande == 'reculer':
             print('Le robot recule')
-
+            
         #
         # SINON SI l'utilisateur a rentre 'gauche', il veut faire tourner le robot a gauche
         #
