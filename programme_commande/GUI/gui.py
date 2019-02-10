@@ -1,9 +1,34 @@
 from . import PythonLja_18 as Lja
+import time
 
+#######################################################################
+#
+#                   f_creer_fenetre_attente()
+#
+#    paramètres : largeur, hauteur
+#
+#         do : crée la fenêtre de largeur et de hauteur définie
+#         return : Rien
+#
+#######################################################################
+
+def f_creer_fenetre_attente(largeur,hauteur):
+    
+    #
+    # Crée la fenêtre
+    #
+
+    Lja.init_window("Panneau de contrôle", largeur, hauteur)
+    Lja.text(largeur-largeur/2, hauteur-hauteur/2, "En attente de connexion...")
+    robot_connecte = input("> ")
+
+    #
+    # Fait durer la fenêtre sous windows
+    #
     
 #######################################################################
 #
-#                   f_creer_fenetre()
+#                   f_creer_fenetre_projet()
 #
 #    paramètres : largeur, hauteur
 #
@@ -13,19 +38,18 @@ from . import PythonLja_18 as Lja
 #######################################################################
 
 
-def f_creer_fenetre(largeur,hauteur):
+def f_creer_fenetre_projet(largeur,hauteur):
 
     #
-    # Crée la fenêtre
+    # Nettoie la fenêtre
     #
 
-    Lja.init_window("Projet", largeur, hauteur)
+    Lja.clear_screen()
+    Lja.text(largeur-largeur/2, hauteur-hauteur/2 ,"Connexion établie") 
 
     #
     # Fait durer la fenêtre sous windows
     #
-
-    Lja.main_loop()
 
 
 #######################################################################
@@ -40,9 +64,31 @@ def f_creer_fenetre(largeur,hauteur):
 #######################################################################
 
 def f_ouvrir_gestionnaire():
-    print('Ouverture du gestionnaire via GUI')
+
+    #
+    # Demande les dimensions de la fenêtre 
+    #
+
     largeur = int(input("Saisissez la largeur de votre fenêtre: "))
     print('\n')
     hauteur = int(input("Saisissez la largeur de votre fenêtre: "))
-    f_creer_fenetre(largeur,hauteur)
 
+    #
+    # Affiche que le gestionnaire via interface graphique s'apprête à s'ouvrir
+    #
+
+    print('Ouverture du gestionnaire via GUI')
+
+    #
+    # Crée la fenêtre d'attente pendant trois secondes
+    #
+
+    f_creer_fenetre_attente(largeur,hauteur)
+    while robot_connecte != "":
+        
+        #
+        # Crée la fenêtre
+        #
+
+        f_creer_fenetre_projet(largeur,hauteur)
+        Lja.main_loop()
