@@ -3,7 +3,7 @@ from . import PythonLja_18 as Lja
     
 #######################################################################
 #
-#                   creer_fenetre()
+#                   f_creer_fenetre()
 #
 #    paramètres : largeur, hauteur
 #
@@ -30,7 +30,7 @@ def f_creer_fenetre(largeur,hauteur):
 
 #######################################################################
 #
-#                   ouvrir_gestionnaire()
+#                   f_ouvrir_gestionnaire()
 #
 #    paramètres : 
 #
