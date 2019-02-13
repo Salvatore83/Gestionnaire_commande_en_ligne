@@ -11,7 +11,11 @@
 # IMPORTS
 #
 
-import connexion_robot
+from * import connexion_robot as Connrob
+from * import commandes_robot as Commrob
+
+
 
 if __name__ == '__main__':
-    pass
+    socket_robot = Connrob.f_creer_socket_client()
+    

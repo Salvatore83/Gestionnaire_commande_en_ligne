@@ -1,17 +1,19 @@
 
 ###########################################################################################################################################
 #
+# Module de gestion d'erreur
 #
-#
-#
+# Premet de gerer les erreurs dans les differents fichiers
 #
 ###########################################################################################################################################
 
-def f_creer_socket_client():
+def f_gestion_erreur(para_fonction):
 
-    socket_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    host = ''
-    port = 5566
-    socket_client.bind((host, port))
-
-    return socket_client
+    try:
+        para_fonction()
+    except Exception as socket.error:
+        print('Une erreur a ete genere')
+    except:
+        pass
+    finally:
+        pass
