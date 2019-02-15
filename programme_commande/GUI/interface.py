@@ -15,6 +15,21 @@ from . import gui as gui
 ###########################################################################################################################################
 
 def f_arret():
+        
+        #
+        # Met du rouge
+        #
+
     Lja.current_color("red")
+        
+        #
+        # Trace le cercle du logo
+        #
+
     Lja.circle(935,735,50,20)
+        
+        #
+        # Trace la barre transversale
+        #
+
     Lja.line(895,695,970,770,20)
