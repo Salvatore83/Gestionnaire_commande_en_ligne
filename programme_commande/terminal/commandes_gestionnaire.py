@@ -8,10 +8,14 @@ def f_gerer_commande_utilisateur():
 
     while valide != True:
         print('Que voulez vous faire ?')
-        print(' >')
-        commande = input('')
+        commande = input('> ')
 
+        #
+        # Gestion de toutes les conditions des commandes AJOUTER PLUS TARD
+        #
         if commande == 'avancer':
-            pass
+            valide = True
+        if commande == 'quitter':
+            valide = True
 
-"""Il faut que je gere les commandes la du coup"""
+    return commande

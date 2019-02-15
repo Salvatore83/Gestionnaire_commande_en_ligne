@@ -78,8 +78,33 @@ def f_accepter_connexion(para_socket_serveur):
 
 def f_envoyer_message(para_socket_client, para_message):
 
-    message = message.encode('utf8')
+    message = para_message.encode('utf8')
     para_socket_client.send(message)
+
+
+
+###########################################################################################################################################
+#
+#           f_attendre_robot_pres()
+#
+#       para : socket client
+#
+#       do :
+#           attend un message
+#
+#       return : message
+#
+###########################################################################################################################################
+
+def f_recevoir_message(para_socket_client):
+
+    message = para_socket_client.recv(1024)
+    message = message.decode('utf8')
+
+    return message
+
+
+
 
 ###########################################################################################################################################
 #
@@ -98,7 +123,7 @@ def f_attendre_robot_pret(para_socket_serveur):
 
     message = '0'
 
-    while message != '1':
+    while message != 'Robot pret':
 
         message = para_socket_serveur.recv(1024)
         message = message.decode('utf8')
@@ -106,5 +131,59 @@ def f_attendre_robot_pret(para_socket_serveur):
     print('robot pret')
 
 
-def fermer_socket(para_socket):
+
+###########################################################################################################################################
+#
+#           f_gerer_commande()
+#
+#       para : socket client et commande
+#
+#       do :
+#           envoie une commande au robot et attend qu'il execute l'action
+#
+#       return : rien
+#
+###########################################################################################################################################
+
+
+def f_gerer_commande(para_socket_serveur, para_socket_client, para_commande):
+
+    #
+    # Envoie la commande au socket client (robot)
+    #
+    f_envoyer_message(para_socket_client, para_commande)
+
+    message = ''
+    #
+    # Tant que le robot n'a pas reçut le message
+    #
+    while message != 'Bien reçut':
+        message = f_recevoir_message(para_socket_client)
+
+    print('Le robot a bien reçut l action')
+    message = ''
+    #
+    # Tant que le robot n'a pas finit l'action
+    #
+    while message != 'Action terminee':
+        message = f_recevoir_message(para_socket_client)
+        print('Le robot execute l action ...')
+
+    print('Le robot a finit l action')
+
+###########################################################################################################################################
+#
+#           f_fermer_socket()
+#
+#       para : socket
+#
+#       do :
+#           ferme le socket
+#
+#       return : rien
+#
+###########################################################################################################################################
+
+
+def f_fermer_socket(para_socket):
     para_socket.close()

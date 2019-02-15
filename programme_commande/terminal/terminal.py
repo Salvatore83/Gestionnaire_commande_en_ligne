@@ -41,7 +41,7 @@ def f_ouvrir_gestionnaire():
     #
     # Attends que le robot puisse executer une action
     #
-    connexion.f_attendre_robot_pret(socket_serveur)
+    connexion.f_attendre_robot_pret(socket_client)
     #
     # Affichage des commandes pour la premiere fois
     #
@@ -51,12 +51,23 @@ def f_ouvrir_gestionnaire():
     #
     commande = ''
     while commande != 'quitter':
-
+        #
+        # Demande a l'utilisateur la commande qu'il veut effectuer
+        #
         commande = comgest.f_gerer_commande_utilisateur()
-        connexion.f_envoyer_commande()
+        #
+        # Envoie la commande au robot et attend qu'il ait finit de l'executer
+        #
+        connexion.f_gerer_commande(socket_serveur, socket_client, commande)
+
+    #
+    # Dire au robot de se deconnecter
+    #
+
+    connexion.f_envoyer_message(socket_client, 'quitter')
 
     #
     # Fermeture des sockets
     #
-    connexion.fermer_socket(socket_serveur)
-    connexion.fermer_socket(socket_client)
+    connexion.f_fermer_socket(socket_serveur)
+    connexion.f_fermer_socket(socket_client)
