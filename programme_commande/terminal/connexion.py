@@ -13,141 +13,98 @@
 
 import socket
 
-def f_afficher_utilisation_socket():
-    print('utilisation du module connexion, socket')
-
-
 ###########################################################################################################################################
 #
 #           f_creer_serveur()
 #
 #       para : aucun
 #
-#       do:
-#           creer le socket serveur
+#       do :
+#           creer le serveur
 #
-#       return : socket_serveur
+#       return : socket serveur
 #
 ###########################################################################################################################################
 
 def f_creer_serveur():
 
-    #
-    # Creer le socket serveur
-    #
     socket_serveur = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     host = ''
     port = 5566
 
-    #
-    # Attribut l'host et le port au socket serveur
-    #
     socket_serveur.bind((host, port))
 
-    print('socket serveur cree avec succes')
     return socket_serveur
 
+
+
 ###########################################################################################################################################
 #
-#           f_accepter_client()
+#           f_accepter_connexion()
 #
-#       para : socket_serveur
+#       para : socket serveur
 #
 #       do :
-#           attend une connxion et cree le socket client
+#           attend une connexion et l'accepte
+#
+#       return : socket client
 #
 ###########################################################################################################################################
 
-def f_accepter_client(para_socket_serveur):
-    #
-    # Attend la demande de connexion 3 echecs possible
-    #
-    para_socket_serveur.listen(3)
 
-    #
-    # Accepte la demande de connexion
-    #
+def f_accepter_connexion(para_socket_serveur):
+
+    para_socket_serveur.listen(3)
     socket_client, adresse = para_socket_serveur.accept()
 
-    print('Un client vient de se connecter, {}'.format(adresse[0]))
-    return socket_client, adresse
+    print('Une connexion a eut lieu {}'.format(adresse[0]))
 
-
-###########################################################################################################################################
-#
-#           f_attendre_message()
-#
-#       para : socket client
-#
-#       do :
-#           attend un message du client et le decode
-#
-#       return : message du client (msg_client)
-#
-###########################################################################################################################################
-
-def f_attendre_message(para_socket_client):
-    #
-    # Attend le message du client avec un maximum de 1024
-    #
-    msg_client = para_socket_client.recv(1024)
-
-    #
-    # Decode le message avec la clef de decodage 'utf8'
-    #
-    msg_client = msg_client.decode('utf8')
-
-    return msg_client
+    return socket_client
 
 
 ###########################################################################################################################################
 #
 #           f_envoyer_message()
 #
-#       para : socket client, message
+#       para : socket client et message
 #
 #       do :
-#           envoie un message au socket client
+#           envoie le message au socket client
 #
 #       return : rien
 #
 ###########################################################################################################################################
 
 def f_envoyer_message(para_socket_client, para_message):
-    #
-    # Encode le message en utf8
-    #
-    para_message = para_message.encode('utf8')
-    #
-    # Envoie du message
-    #
-    para_socket_client.send(para_message)
 
-
-
+    message = message.encode('utf8')
+    para_socket_client.send(message)
 
 ###########################################################################################################################################
 #
-#           f_fermer_serveur()
+#           f_attendre_robot_pres()
 #
-#       para : socket_serveur, socket_client
+#       para : socket serveur
 #
 #       do :
-#               ferme les sockets / conenxions
+#           attend que le robot soit pres
 #
 #       return : rien
 #
 ###########################################################################################################################################
 
+def f_attendre_robot_pret(para_socket_serveur):
 
-def f_fermer_serveur(para_socket_serveur, para_socket_client):
-    #
-    # Ferme le socket serveur
-    #
-    para_socket_serveur.close()
+    message = '0'
 
-    #
-    # Ferme le socket client
-    #
-    para_socket_client.close()
+    while message != '1':
+
+        message = para_socket_serveur.recv(1024)
+        message = message.decode('utf8')
+
+    print('robot pret')
+
+
+def fermer_socket(para_socket):
+    para_socket.close()
