@@ -1,3 +1,9 @@
+#
+# Client, sert a jouer le role du robot sans robot
+#
+# Pas besoin de commenter du coup
+
+
 import socket
 
 socket_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
