@@ -3,11 +3,11 @@ L'utilisateur peut ouvrir le gestionnaire de commande via terminal ou via gui
 
 GESTION DES DIFFERENTES COMMANDES VIA TERMINAL
 
-Le gestionnaire creer le socket serveur
-Le gestionnaire initialise le socket serveur
-Le gestionnaire attend une connexion
+Le gestionnaire creer le socket serveur                         V
+Le gestionnaire initialise le socket serveur                    V
+Le gestionnaire attend une connexion                            V
 Lorsque le gestionnaire recoit une connexion,
-il l'accepte.
+il l'accepte.                                                   V
 Le gestionnaire envoie alors a la connexion une demande de validite
 Lorsque la connexion lui envoie 1, le robot est initialise et attend une commande a faire
 
