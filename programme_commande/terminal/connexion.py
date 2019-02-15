@@ -104,3 +104,7 @@ def f_attendre_robot_pret(para_socket_serveur):
         message = message.decode('utf8')
 
     print('robot pret')
+
+
+def fermer_socket(para_socket):
+    para_socket.close()

@@ -8,6 +8,7 @@
 ##########################################################################################################################################
 
 from . import connexion
+from . import commandes_gestionnaire as comgest
 
 ###########################################################################################################################################
 #
@@ -42,14 +43,20 @@ def f_ouvrir_gestionnaire():
     #
     connexion.f_attendre_robot_pret(socket_serveur)
     #
-    # Boucle de gestion du robot
+    # Affichage des commandes pour la premiere fois
+    #
+    comgest.f_afficher_commande()
+    #
+    # Gestion des commandes utilisateurs
     #
     commande = ''
-    compt_i = 0
     while commande != 'quitter':
 
-        if compt_i == 0:
-            f_afficher_commande()
-            compt_i += 1
+        commande = comgest.f_gerer_commande_utilisateur()
+        connexion.f_envoyer_commande()
 
-        
+    #
+    # Fermeture des sockets
+    #
+    connexion.fermer_socket(socket_serveur)
+    connexion.fermer_socket(socket_client)
