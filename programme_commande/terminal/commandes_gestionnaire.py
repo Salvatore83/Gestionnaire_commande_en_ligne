@@ -14,4 +14,4 @@ def f_gerer_commande_utilisateur():
         if commande == 'avancer':
             pass
 
-Il faut que je gere les commandes la du coup
+"""Il faut que je gere les commandes la du coup"""
