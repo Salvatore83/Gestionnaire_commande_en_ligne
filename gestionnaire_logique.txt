@@ -1,0 +1,30 @@
+L'utilisateur peut ouvrir le gestionnaire de commande via terminal ou via gui
+
+
+GESTION DES DIFFERENTES COMMANDES VIA TERMINAL
+
+Le gestionnaire creer le socket serveur
+Le gestionnaire initialise le socket serveur
+Le gestionnaire attend une connexion
+Lorsque le gestionnaire recoit une connexion,
+il l'accepte.
+Le gestionnaire envoie alors a la connexion une demande de validite
+Lorsque la connexion lui envoie 1, le robot est initialise et attend une commande a faire
+
+Tant que l'utilisateur ne veut pas fermer le gestionnaire
+
+Le gestionnaire affiche alors toutes les commandes possibles
+L'utilisateur peut alors entrer une commande
+Si la commande est valide, le gestionnaire l'envoie a la connexion Sinon, elle affiche que la commande n'est pas valide
+
+Apres avoir envoye la commande, le gestionnaire attend une reponse de la connexion
+Si la reponse est 0, cela veut dire que le robot a bien recut l'action est l'execute.
+Si la reponse est 3, le robot n'a pas pu executer l'action
+
+Apres avoir recut cela, le gestionnaire attend une reponse
+Si la reponse est egale a 1, cela veut dire que le robot a bien execute l'action
+
+Le gestionnaire redemande alors l'action que l'utilisateur veut faire, retour a la boucle.
+
+Si l'utilisateur veut fermer le programme.
+Fermeture des socket et du programme.
