@@ -22,6 +22,11 @@ def f_gerer_commande_utilisateur():
         if commande == 'avancer':
             valide = True
         #
+        # Si l'utilisateur veut afficher la liste des commandes
+        #
+        if commande == 'li-com':
+            f_afficher_commande()
+        #
         # Si l'utilisateur veut quitter
         #
         if commande == 'quitter':

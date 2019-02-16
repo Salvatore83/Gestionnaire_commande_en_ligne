@@ -35,7 +35,7 @@ def f_ouvrir_gestionnaire():
     #
     socket_client = connexion.f_accepter_connexion(socket_serveur)
     #
-    # Envoie un message au robot
+    # Envoie un message au robot pour dire qu'il s'est bien connecté
     #
     connexion.f_envoyer_message(socket_client, '1')
     #
@@ -58,7 +58,10 @@ def f_ouvrir_gestionnaire():
         #
         # Envoie la commande au robot et attend qu'il ait finit de l'executer
         #
-        connexion.f_gerer_commande(socket_serveur, socket_client, commande)
+        if commande == 'quitter':
+            pass
+        else:
+            connexion.f_gerer_commande(socket_serveur, socket_client, commande)
 
     #
     # Dire au robot de se deconnecter
