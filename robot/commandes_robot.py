@@ -27,6 +27,7 @@ def f_gerer_action_robot(para_socket_client, para_commande):
     # Grosse comparaison des commandes demandées par le terminal
     #
     if para_commande == 'avancer':
+        # f_avancer_robot()
         CONrob.f_envoyer_message(para_socket_client, 'En cours')
     elif para_commande == 'reculer':
         # f_reculer_robot()

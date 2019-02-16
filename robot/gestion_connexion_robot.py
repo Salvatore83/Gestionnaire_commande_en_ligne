@@ -80,9 +80,17 @@ def f_connecter_socket(para_socket_client, para_host, para_port):
 def f_reponse_connexion(para_socket_client):
 
     message = ''
-
+    #
+    # Tant que le robot n'envoie pas 1, il n'est pas pret
+    #
     while message != '1':
+        #
+        # Reception du message par le socket
+        #
         message = para_socket_client.recv(1024)
+        #
+        # Decodage du message (utf8)
+        #
         message = message.decode('utf8')
 
 
@@ -103,8 +111,13 @@ def f_reponse_connexion(para_socket_client):
 
 def f_envoyer_message(para_socket_client, para_message):
 
+    #
+    # Encodage du message en utf8
+    #
     message = para_message.encode('utf8')
-
+    #
+    # Envoie du message via le socket
+    #
     para_socket_client.send(message)
 
 
@@ -127,10 +140,18 @@ def f_envoyer_message(para_socket_client, para_message):
 def f_robot_initialisation(para_socket_client):
 
     initialisation = ''
-
+    #
+    # Tant que l'initialisation des capteurs n'est pas valide
+    #
     while initialisation != 'Succes':
+        #
+        # Gere l'initialisation des capteurs
+        #
         initialisation = COMrob.f_initialisation_capteurs()
 
+    #
+    # Lorsque l'initialisation des capteurs s'est faite avec succes, envoie du message Robot pret, via le socket
+    #
     f_envoyer_message(para_socket_client, 'Robot pret')
 
 
@@ -151,16 +172,39 @@ def f_robot_initialisation(para_socket_client):
 
 def f_action_robot(para_socket_client):
 
+    #
+    # Defini l'action du robot a True
+    #
     action_robot = True
 
+    #
+    # Tant que l'action robot n'est pas egale a False
+    #
     while action_robot != False:
+        #
+        # Recoit un message via le socket
+        #
         message = para_socket_client.recv(1024)
+        #
+        # Decode le message et le sauvegarde dans une variable (utf8)
+        #
         message = message.decode('utf8')
-
+        #
+        # Si le message est egal a quitter, quitte le programme
+        #
         if message == 'quitter':
             action_robot = False
+        #
+        # Sinon executer l'action
+        #
         else:
+            #
+            # Envoie au gestionnaire qu'il a bien recut la commande
+            #
             f_envoyer_message(para_socket_client, 'Bien reçut')
+            #
+            # Le robot execute l'action
+            #
             COMrob.f_gerer_action_robot(para_socket_client, message)
 
 
@@ -177,5 +221,8 @@ def f_action_robot(para_socket_client):
 #
 ###########################################################################################################################################
 
-def fermer_socket(para_socket_client):
-    para_socket_client.close()
+def fermer_socket(para_socket):
+    #
+    # Ferme le socket
+    #
+    para_socket.close()
