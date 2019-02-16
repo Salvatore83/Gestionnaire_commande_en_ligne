@@ -243,7 +243,7 @@ def f_BoutonAvantClic():
         #
         # Crée le reflet à gauche
         #  
-    Lja.polygon(10,150,17,155,17,245,10,250)
+    Lja.polygon(115,45,122,50,122,140,115,145)
         #
         # Met la couleur "violet clair-moyen" du reflet en haut
         #
@@ -251,7 +251,7 @@ def f_BoutonAvantClic():
         #
         # Crée le reflet en haut
         #
-    Lja.polygon(10,150,17,155,103,155,110,150)
+    Lja.polygon(115,45,115,50,208,50,215,45)
         #
         # Met la couleur "violet sombre-moyen" du reflet à droite
         #
@@ -259,7 +259,7 @@ def f_BoutonAvantClic():
         #
         # Crée le reflet à droite
         #
-    Lja.polygon(110,150,103,155,103,245,110,250)
+    Lja.polygon(215,45,208,50,208,145,215,145)
         #
         # Met la couleur "violet sombre" du reflet en bas
         #
@@ -267,10 +267,7 @@ def f_BoutonAvantClic():
         #
         # Crée le reflet en bas
         #
-    Lja.polygon(10,250,17,245,103,245,110,250)
-        #
-        # Crée le reflet en bas
-        #
+    Lja.polygon(115,145,122,140,208,140,215,145)
 
 ###########################################################################################################################################
 #
@@ -356,7 +353,7 @@ def f_BoutonDroiteClic():
         #
         # Crée le reflet à gauche
         #  
-    Lja.polygon(10,150,17,155,17,245,10,250)
+    Lja.polygon(220,150,227,155,227,245,220,250) 
         #
         # Met la couleur "violet clair-moyen" du reflet en haut
         #
@@ -364,7 +361,7 @@ def f_BoutonDroiteClic():
         #
         # Crée le reflet en haut
         #
-    Lja.polygon(10,150,17,155,103,155,110,150)
+    Lja.polygon(220,150,227,155,313,155,320,150)
         #
         # Met la couleur "violet sombre-moyen" du reflet à droite
         #
@@ -372,7 +369,7 @@ def f_BoutonDroiteClic():
         #
         # Crée le reflet à droite
         #
-    Lja.polygon(110,150,103,155,103,245,110,250)
+    Lja.polygon(320,150,313,155,313,245,320,250)
         #
         # Met la couleur "violet sombre" du reflet en bas
         #
@@ -380,10 +377,7 @@ def f_BoutonDroiteClic():
         #
         # Crée le reflet en bas
         #
-    Lja.polygon(10,250,17,245,103,245,110,250)
-        #
-        # Crée le reflet en bas
-        #
+    Lja.polygon(220,250,227,245,313,245,320,250)
 
 ###########################################################################################################################################
 #
@@ -469,7 +463,7 @@ def f_BoutonArriereClic():
         #
         # Crée le reflet à gauche
         #  
-    Lja.polygon(10,150,17,155,17,245,10,250)
+    Lja.polygon(115,255,122,260,122,350,115,355)
         #
         # Met la couleur "violet clair-moyen" du reflet en haut
         #
@@ -477,7 +471,7 @@ def f_BoutonArriereClic():
         #
         # Crée le reflet en haut
         #
-    Lja.polygon(10,150,17,155,103,155,110,150)
+    Lja.polygon(115,255,122,260,208,260,215,255)
         #
         # Met la couleur "violet sombre-moyen" du reflet à droite
         #
@@ -485,7 +479,7 @@ def f_BoutonArriereClic():
         #
         # Crée le reflet à droite
         #
-    Lja.polygon(110,150,103,155,103,245,110,250)
+    Lja.polygon(215,255,208,260,208,350,215,355)
         #
         # Met la couleur "violet sombre" du reflet en bas
         #
@@ -493,7 +487,4 @@ def f_BoutonArriereClic():
         #
         # Crée le reflet en bas
         #
-    Lja.polygon(10,250,17,245,103,245,110,250)
-        #
-        # Crée le reflet en bas
-        #
+    Lja.polygon(115,355,122,350,208,350,215,355)

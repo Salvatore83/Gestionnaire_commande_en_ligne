@@ -103,7 +103,7 @@ def f_ouvrir_gestionnaire():
         #
     f_creer_fenetre_attente()    
         #
-        # Associe le clic gauche de la souris au démarrage du robot (A METTRE A JOUR)
+        # Associe le clic droit de la souris au démarrage du robot (A METTRE A JOUR)
         #
     Lja.assoc_button(3,f_creer_fenetre_projet)
         #
