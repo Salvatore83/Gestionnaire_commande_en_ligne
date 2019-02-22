@@ -90,6 +90,7 @@ def f_accepter_connexion(para_socket_serveur):
 ###########################################################################################################################################
 
 def f_envoyer_message(para_socket_client, para_message):
+
     #
     # Encode le message a envoyer
     #
