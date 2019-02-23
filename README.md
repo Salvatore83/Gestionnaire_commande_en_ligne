@@ -1,11 +1,34 @@
-# Gestionnaire_commande_en_ligne
-Projet ISN gestionnaire de commande en ligne
+# Gestionnaire de gestion en ligne
+ Gestion de robot par wifi
+******************************
++ Objectifs
++ Contraintes
++ Modules
 
-Le but est de creer un logiciel python permettant de controler un robot  a distance en utilisant les socket python pour la connexion
+*************************************************************************
 
+## Objectifs
 
-Le gestionnaire de commande peut s'ouvrir par terminal ou par interface graphique :
+  Creer un logiciel tournant sur un ordinateur ou un telephone permettant de gerer un robot a distance.
 
-	Le choix est laisse a l'utilisateur lorsqu'il ouvre le projet
+************************************************************************
 
+## Contraintes
 
+  Le projet doit etre ```obligatoirement``` et ```entierement``` code avec le language de programmation Python.
+
+********************************************************************
+
+## Modules
+
++ [socket](https://docs.python.org/3/library/socket.html#module-socket)
++ [PythonLja_18]()
++ [GPIO.Zero](https://gpiozero.readthedocs.io/en/stable/)
+
+********************************************************************
+
+## Auteurs
+
+- **Hamanite**    _____ *Interface graphique*
+- **SkyNox**      _______ *Electronique, robot et commandes robot*
+- **Salvatore**   _____ *Connexion, gestion des erreurs et commandes robot*
