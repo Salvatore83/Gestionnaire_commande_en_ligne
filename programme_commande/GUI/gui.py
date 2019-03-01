@@ -20,6 +20,11 @@ from . import actions as act
 largeur = 800
 hauteur = 600
 
+#
+# Définition d'une variable qui simule l'établissement de la connexion entre le robot et la fenêtre
+#
+OuvrirFenetre = 0
+
 ###########################################################################################################################################
 #
 #           f_creer_fenetre_attente()
@@ -58,6 +63,10 @@ def f_creer_fenetre_attente():
 ###########################################################################################################################################    
 
 def f_creer_fenetre_projet():
+    #
+    # Etablit la connexion
+    #
+    OuvrirFenetre = 1
         #
         # Nettoie l'écran
         #
