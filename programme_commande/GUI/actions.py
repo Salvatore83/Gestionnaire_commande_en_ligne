@@ -1,6 +1,30 @@
+#
+#
+#
+#
+#
+# Imports: Interface graphique (PythonLja), Le gestionnaire de l'interface graphique (gui), et le répertoire des objets graphiques (interface)
+#
+#
+#
+#
+#
+
 from . import PythonLja_18 as Lja
 from . import gui as gui
 from . import interface as logo
+
+#
+#
+#
+#
+#
+# Changement de l'apparence des boutons quand ils sont cliqués: Fonction "cliquabilité"
+#
+#
+#
+#
+#
 
 ###########################################################################################################################################
 #

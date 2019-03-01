@@ -1,6 +1,30 @@
+#
+#
+#
+#
+#
+# Imports: Interface graphique (PythonLja), Le gestionnaire de l'interface graphique (gui), et le répertoire d'animations graphiques (actions)
+#
+#
+#
+#
+#
+
 from . import PythonLja_18 as Lja
 from . import gui as gui
 from . import actions as act
+
+#
+#
+#
+#
+#
+# Bouton d'arrêt (logo"interdit")
+#
+#
+#
+#
+#
 
 ###########################################################################################################################################
 #
@@ -23,11 +47,23 @@ def f_arret():
         #
         # Trace le cercle du logo
         #
-    Lja.circle(935,735,50,20) 
+    Lja.circle(735,535,50,20) 
         #
         # Trace la barre transversale
         #
-    Lja.line(895,695,970,770,20)
+    Lja.line(695,495,770,570,20)
+
+#
+#
+#
+#
+#
+# Touches Directionnelles Basiques et leurs Animations de Clic (Ordre de définition: Direction1, Clic1, Direction2, Clic2 ...)
+#
+#
+#
+#
+#
 
 ###########################################################################################################################################
 #
@@ -488,3 +524,93 @@ def f_BoutonArriereClic():
         # Crée le reflet en bas
         #
     Lja.polygon(115,355,122,350,208,350,215,355)
+
+#
+#
+#
+#
+#
+# Boutons d'action prédéfinie de direction (Le robot bouche d'une distance x)
+#
+#
+#
+#
+#
+
+###########################################################################################################################################
+#
+#           f_BoutonDistanceDefinieHaut()
+#
+#       para : aucun
+#
+#       do :
+#               Crée le bouton de direction (de déplacement) du robot vers le haut sur une distance définie
+#
+#       return : rien
+#
+###########################################################################################################################################
+
+def f_BoutonDistanceDefinieHaut():
+    #
+    # Met le bleu du bouton
+    #
+    Lja.current_color("blue")
+    #
+    # Crée le rectangle basique
+    #
+    Lja.box(60,415,270,385)
+    #
+    # Crée la couleur "bleu très clair" pour le reflet à gauche du rectangle
+    #
+    Lja.current_color(77,107,206)
+    #
+    # Crée le reflet "bleu très clair" à gauche du rectangle
+    #
+    Lja.polygon(60,385,65,390,65,410,60,415)
+    #
+    # Crée la couleur "bleu clair" pour le reflet en haut du rectangle
+    #
+    Lja.current_color(59,114,155)
+    # 
+    # Crée le reflet "bleu clair" en haut du rectangle
+    #
+    Lja.polygon(60,385,65,390,265,390,270,385)
+    #
+    # Crée la couleur "bleu sombre" pour le reflet à droite du rectangle
+    #
+    Lja.current_color(5,5,81)
+    #
+    # Crée le reflet "bleu sombre" à droite du rectangle
+    #
+    Lja.polygon(270,385,265,390,265,410,270,415)
+    #
+    # Crée la couleur "bleu très sombre" en bas du rectangle
+    #
+    Lja.current_color(0,0,73)
+    #
+    # Crée le reflet "bleu très sombre" en bas du rectangle
+    #
+    Lja.polygon(60,415,65,410,265,410,270,415)
+
+###########################################################################################################################################
+#
+#           f_BoutonDistanceDefinieBas()
+#
+#       para : aucun
+#
+#       do :
+#               Crée le bouton de direction (de déplacement) du robot vers le bas sur une distance définie
+#
+#       return : rien
+#
+###########################################################################################################################################
+
+def f_BoutonDistanceDefinieBas():
+    #
+    # Met le bleu du bouton
+    #
+    Lja.current_color("blue")
+    #
+    # Crée le rectangle basique
+    #
+    Lja.box(60,455,270,425)

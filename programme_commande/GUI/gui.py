@@ -1,12 +1,24 @@
+#
+#
+#
+#
+#
+# Imports: Interface graphique (PythonLja),  le répertoire des objets graphiques (interface), et le répertoire d'animations graphiques (actions)
+#
+#
+#
+#
+#
+
 from . import PythonLja_18 as Lja
 from . import interface as logo
 from . import actions as act
 
-    #
-    # Définition des dimensions de la fenêtre
-    #
-largeur = 1000
-hauteur = 800
+#
+# Définition des dimensions de la fenêtre
+#
+largeur = 800
+hauteur = 600
 
 ###########################################################################################################################################
 #
@@ -78,6 +90,14 @@ def f_creer_fenetre_projet():
         # Trace le bouton du bas (vers l'arrière) dans l'interface graphique
         #
     logo.f_BoutonArriere()
+        #
+        # Trace le bouton du haut (vers le haut) d'une distance donnée dans l'interface graphique
+        #
+    logo.f_BoutonDistanceDefinieHaut()
+        #
+        # Trace le bouton du milieu haut (vers le bas) d'une distance donnée dans l'interface graphique
+        #
+    logo.f_BoutonDistanceDefinieBas()
 
 ###########################################################################################################################################
 #
