@@ -49,7 +49,7 @@ def f_RecupCoord():
     #
     # Si la souris est dans le carré de gauche:
     #
-    if sourisx > 10 and sourisx < 110 and sourisy > 150 and sourisy < 250 and PositionClic == 0:
+    if sourisx > 10 and sourisx < 110 and sourisy > 150 and sourisy < 250:
         #
         # Affiche l'allure cliquée du bouton de gauche
         #
@@ -60,11 +60,15 @@ def f_RecupCoord():
         logo.f_BoutonAvant()
         logo.f_BoutonDroite()
         logo.f_BoutonArriere()
+        logo.f_BoutonDistanceDefinieHaut()
+        logo.f_BoutonDistanceDefinieBas()
+        logo.f_BoutonDistanceDefinieGauche()
+        logo.f_BoutonDistanceDefinieDroite()
         PositionClic = 1
         #
         # Sinon, si la souris est dans le carré du haut:
         #
-    elif sourisx > 115 and sourisx < 215 and sourisy > 45 and sourisy < 145 and PositionClic == 0:
+    elif sourisx > 115 and sourisx < 215 and sourisy > 45 and sourisy < 145:
         #
         # Affiche l'allure cliquée du bouton du haut
         #
@@ -75,11 +79,15 @@ def f_RecupCoord():
         logo.f_BoutonGauche()
         logo.f_BoutonDroite()
         logo.f_BoutonArriere()
+        logo.f_BoutonDistanceDefinieHaut()
+        logo.f_BoutonDistanceDefinieBas()
+        logo.f_BoutonDistanceDefinieGauche()
+        logo.f_BoutonDistanceDefinieDroite()
         PositionClic = 2
         #
         # Sinon, si la souris est dans le carré de droite:
         #
-    elif sourisx > 220 and sourisx < 320 and sourisy > 150 and sourisy < 250 and PositionClic == 0:
+    elif sourisx > 220 and sourisx < 320 and sourisy > 150 and sourisy < 250:
         #
         # Affiche l'allure cliquée du bouton de droite
         #
@@ -90,9 +98,13 @@ def f_RecupCoord():
         logo.f_BoutonGauche()
         logo.f_BoutonAvant()
         logo.f_BoutonArriere()
+        logo.f_BoutonDistanceDefinieHaut()
+        logo.f_BoutonDistanceDefinieBas()
+        logo.f_BoutonDistanceDefinieGauche()
+        logo.f_BoutonDistanceDefinieDroite()
         PositionClic = 3
         # Sinon, si la souris est dans le carré du bas:
-    elif sourisx > 115 and sourisx < 215 and sourisy > 255 and sourisy < 355 and PositionClic == 0:
+    elif sourisx > 115 and sourisx < 215 and sourisy > 255 and sourisy < 355:
         #
         # Affiche l'allure cliquée du bouton du bas
         #
@@ -103,11 +115,94 @@ def f_RecupCoord():
         logo.f_BoutonGauche()
         logo.f_BoutonDroite()
         logo.f_BoutonAvant()
+        logo.f_BoutonDistanceDefinieHaut()
+        logo.f_BoutonDistanceDefinieBas()
+        logo.f_BoutonDistanceDefinieGauche()
+        logo.f_BoutonDistanceDefinieDroite()
         PositionClic = 4
-
-        ###############################################################################################################################
-        # ATTENTION: A PARTIR D'ICI, C'EST POUR FAIRE EN SORTE QUE LES BOUTONS SOIENT EUX-MEMES "DECLIQUABLES"; NE MARCHE PAS ENCORE. #
-        ###############################################################################################################################
+    #
+    # Sinon, si la souris est dans la zone des boutons rectangulaires:
+    #
+    elif sourisx > 60 and sourisx < 270:
+        #
+        # Si la souris est dans le bouton du haut:
+        #
+        if sourisy > 385 and sourisy < 415:
+            #
+            # Affiche l'allure cliqué du bouton du haut
+            # 
+            logo.f_BoutonDistanceDefinieHautClic()
+            #
+            # Rétablit l'allure normale des autres boutons
+            #
+            logo.f_BoutonGauche()
+            logo.f_BoutonDroite()
+            logo.f_BoutonAvant()
+            logo.f_BoutonArriere()
+            logo.f_BoutonDistanceDefinieBas()
+            logo.f_BoutonDistanceDefinieGauche()
+            logo.f_BoutonDistanceDefinieDroite()
+            PositionClic = 5
+        #
+        # Sinon, si la souris est dans le bouton du milieu-haut:
+        #
+        elif sourisy > 425 and sourisy < 455:
+            #
+            # Affiche l'allure cliquée du bouton du milieu-haut
+            #
+            logo.f_BoutonDistanceDefinieBasClic()
+            #
+            # Rétablit l'allure normale des autres boutons
+            #
+            logo.f_BoutonGauche()
+            logo.f_BoutonDroite()
+            logo.f_BoutonAvant()
+            logo.f_BoutonArriere()
+            logo.f_BoutonDistanceDefinieHaut()
+            logo.f_BoutonDistanceDefinieGauche()
+            logo.f_BoutonDistanceDefinieDroite()
+            PositionClic =6
+        #
+        # Sinon, si le bouton est dans le  bouton du milieu-bas:
+        #
+        elif sourisy > 465 and sourisy < 495:
+            #
+            # Affiche l'allure cliqué du bouton du milieu-bas
+            #
+            logo.f_BoutonDistanceDefinieGaucheClic()
+            #
+            # Rétablit l'allure normale des autres boutons
+            #
+            logo.f_BoutonGauche()
+            logo.f_BoutonDroite()
+            logo.f_BoutonAvant()
+            logo.f_BoutonArriere()
+            logo.f_BoutonDistanceDefinieHaut()
+            logo.f_BoutonDistanceDefinieBas()
+            logo.f_BoutonDistanceDefinieDroite()
+            PositionClic = 7
+        #
+        # Sinon, si le bouton est dans le bouton du bas:
+        #
+        elif sourisy > 505 and sourisy < 535:
+            #
+            # Affiche l'allure cliquée du bouton du bas
+            #
+            logo.f_BoutonDistanceDefinieDroiteClic()
+            #
+            # Rétablit l'allure normale des autres boutons
+            #
+            logo.f_BoutonGauche()
+            logo.f_BoutonDroite()
+            logo.f_BoutonAvant()
+            logo.f_BoutonArriere()
+            logo.f_BoutonDistanceDefinieHaut()
+            logo.f_BoutonDistanceDefinieGauche()
+            logo.f_BoutonDistanceDefinieBas()
+            PositionClic = 8                                 
+        ###############################################################################################################################################################
+        # ATTENTION: A PARTIR D'ICI, C'EST POUR FAIRE EN SORTE QUE LES BOUTONS SOIENT EUX-MEMES "DECLIQUABLES"; NE MARCHE PAS ENCORE, DONC ARRETE AUX BOUTONS CARRES. #
+        ###############################################################################################################################################################
 
         #
         # Si on est sur le carré de gauche et qu'il a déjà été cliqué:
@@ -156,6 +251,10 @@ def f_RecupCoord():
         logo.f_BoutonAvant()
         logo.f_BoutonDroite()
         logo.f_BoutonArriere()
+        logo.f_BoutonDistanceDefinieHaut()
+        logo.f_BoutonDistanceDefinieBas()
+        logo.f_BoutonDistanceDefinieGauche()
+        logo.f_BoutonDistanceDefinieDroite()
         PositionClic = 0
 
         ######################################

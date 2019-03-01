@@ -594,6 +594,61 @@ def f_BoutonDistanceDefinieHaut():
 
 ###########################################################################################################################################
 #
+#           f_BoutonDistanceDefinieHautClic()
+#
+#       para : aucun
+#
+#       do :
+#               Crée le bouton de direction (de déplacement) du robot vers le haut sur une distance définie quand il est cliqué
+#
+#       return : rien
+#
+###########################################################################################################################################
+
+def f_BoutonDistanceDefinieHautClic():
+    #
+    # Met le bleu du bouton
+    #
+    Lja.current_color(18,23,186)
+    #
+    # Crée le rectangle basique
+    #
+    Lja.box(60,415,270,385)
+    #
+    # Crée la couleur "bleu très clair" pour le reflet à gauche du rectangle
+    #
+    Lja.current_color(55,83,175)
+    #
+    # Crée le reflet "bleu très clair" à gauche du rectangle
+    #
+    Lja.polygon(60,385,65,390,65,410,60,415)
+    #
+    # Crée la couleur "bleu clair" pour le reflet en haut du rectangle
+    #
+    Lja.current_color(40,85,119)
+    # 
+    # Crée le reflet "bleu clair" en haut du rectangle
+    #
+    Lja.polygon(60,385,65,390,265,390,270,385)
+    #
+    # Crée la couleur "bleu sombre" pour le reflet à droite du rectangle
+    #
+    Lja.current_color(3,3,50)
+    #
+    # Crée le reflet "bleu sombre" à droite du rectangle
+    #
+    Lja.polygon(270,385,265,390,265,410,270,415)
+    #
+    # Crée la couleur "bleu très sombre" en bas du rectangle
+    #
+    Lja.current_color(2,3,28)
+    #
+    # Crée le reflet "bleu très sombre" en bas du rectangle
+    #
+    Lja.polygon(60,415,65,410,265,410,270,415)
+
+###########################################################################################################################################
+#
 #           f_BoutonDistanceDefinieBas()
 #
 #       para : aucun
@@ -614,3 +669,312 @@ def f_BoutonDistanceDefinieBas():
     # Crée le rectangle basique
     #
     Lja.box(60,455,270,425)
+    #
+    # Crée la couleur "bleu très clair" pour le reflet à gauche du rectangle
+    #
+    Lja.current_color(77,107,206)
+    #
+    # Crée le reflet "bleu très clair" à gauche du rectangle
+    #
+    Lja.polygon(60,425,65,430,65,450,60,455)
+    #
+    # Crée la couleur "bleu clair" pour le reflet en haut du rectangle
+    #
+    Lja.current_color(59,114,155)
+    # 
+    # Crée le reflet "bleu clair" en haut du rectangle
+    #
+    Lja.polygon(60,425,65,430,265,430,270,425)
+    #
+    # Crée la couleur "bleu sombre" pour le reflet à droite du rectangle
+    #
+    Lja.current_color(5,5,81)
+    #
+    # Crée le reflet "bleu sombre" à droite du rectangle
+    #
+    Lja.polygon(270,425,265,430,265,450,270,455)
+    #
+    # Crée la couleur "bleu très sombre" en bas du rectangle
+    #
+    Lja.current_color(0,0,73)
+    #
+    # Crée le reflet "bleu très sombre" en bas du rectangle
+    #
+    Lja.polygon(60,455,65,450,265,450,270,455)
+
+###########################################################################################################################################
+#
+#           f_BoutonDistanceDefinieBasClic()
+#
+#       para : aucun
+#
+#       do :
+#               Crée le bouton de direction (de déplacement) du robot vers le bas sur une distance définie quand il est cliqué
+#
+#       return : rien
+#
+###########################################################################################################################################
+
+def f_BoutonDistanceDefinieBasClic():
+    #
+    # Met le bleu du bouton
+    #
+    Lja.current_color(18,23,186)
+    #
+    # Crée le rectangle basique
+    #
+    Lja.box(60,455,270,425)
+    #
+    # Crée la couleur "bleu très clair" pour le reflet à gauche du rectangle
+    #
+    Lja.current_color(55,83,175)
+    #
+    # Crée le reflet "bleu très clair" à gauche du rectangle
+    #
+    Lja.polygon(60,425,65,430,65,450,60,455)
+    #
+    # Crée la couleur "bleu clair" pour le reflet en haut du rectangle
+    #
+    Lja.current_color(40,85,119)
+    # 
+    # Crée le reflet "bleu clair" en haut du rectangle
+    #
+    Lja.polygon(60,425,65,430,265,430,270,425)
+    #
+    # Crée la couleur "bleu sombre" pour le reflet à droite du rectangle
+    #
+    Lja.current_color(3,3,50)
+    #
+    # Crée le reflet "bleu sombre" à droite du rectangle
+    #
+    Lja.polygon(270,425,265,430,265,450,270,455)
+    #
+    # Crée la couleur "bleu très sombre" en bas du rectangle
+    #
+    Lja.current_color(2,3,28)
+    #
+    # Crée le reflet "bleu très sombre" en bas du rectangle
+    #
+    Lja.polygon(60,455,65,450,265,450,270,455)
+
+
+###########################################################################################################################################
+#
+#           f_BoutonDistanceDefinieGauche()
+#
+#       para : aucun
+#
+#       do :
+#               Crée le bouton de direction (de déplacement) du robot vers la gauche sur une distance définie
+#
+#       return : rien
+#
+###########################################################################################################################################
+
+def f_BoutonDistanceDefinieGauche():
+    #
+    # Met le bleu du bouton
+    #
+    Lja.current_color("blue")
+    #
+    # Crée le rectangle basique
+    #
+    Lja.box(60,495,270,465)
+    #
+    # Crée la couleur "bleu très clair" pour le reflet à gauche du rectangle
+    #
+    Lja.current_color(77,107,206)
+    #
+    # Crée le reflet "bleu très clair" à gauche du rectangle
+    #
+    Lja.polygon(60,465,65,470,65,490,60,495)
+    #
+    # Crée la couleur "bleu clair" pour le reflet en haut du rectangle
+    #
+    Lja.current_color(59,114,155)
+    # 
+    # Crée le reflet "bleu clair" en haut du rectangle
+    #
+    Lja.polygon(60,465,65,470,265,470,270,465)
+    #
+    # Crée la couleur "bleu sombre" pour le reflet à droite du rectangle
+    #
+    Lja.current_color(5,5,81)
+    #
+    # Crée le reflet "bleu sombre" à droite du rectangle
+    #
+    Lja.polygon(270,465,265,470,265,490,270,495)
+    #
+    # Crée la couleur "bleu très sombre" en bas du rectangle
+    #
+    Lja.current_color(0,0,73)
+    #
+    # Crée le reflet "bleu très sombre" en bas du rectangle
+    #
+    Lja.polygon(60,495,65,490,265,490,270,495)
+
+###########################################################################################################################################
+#
+#           f_BoutonDistanceDefinieGaucheClic()
+#
+#       para : aucun
+#
+#       do :
+#               Crée le bouton de direction (de déplacement) du robot vers la gauche sur une distance définie quand il est cliqué
+#
+#       return : rien
+#
+###########################################################################################################################################
+
+def f_BoutonDistanceDefinieGaucheClic():
+    #
+    # Met le bleu du bouton
+    #
+    Lja.current_color(18,23,186)
+    #
+    # Crée le rectangle basique
+    #
+    Lja.box(60,495,270,465)
+    #
+    # Crée la couleur "bleu très clair" pour le reflet à gauche du rectangle
+    #
+    Lja.current_color(55,83,175)
+    #
+    # Crée le reflet "bleu très clair" à gauche du rectangle
+    #
+    Lja.polygon(60,465,65,470,65,490,60,495)
+    #
+    # Crée la couleur "bleu clair" pour le reflet en haut du rectangle
+    #
+    Lja.current_color(40,85,119)
+    # 
+    # Crée le reflet "bleu clair" en haut du rectangle
+    #
+    Lja.polygon(60,465,65,470,265,470,270,465)
+    #
+    # Crée la couleur "bleu sombre" pour le reflet à droite du rectangle
+    #
+    Lja.current_color(3,3,50)
+    #
+    # Crée le reflet "bleu sombre" à droite du rectangle
+    #
+    Lja.polygon(270,465,265,470,265,490,270,495)
+    #
+    # Crée la couleur "bleu très sombre" en bas du rectangle
+    #
+    Lja.current_color(2,3,28)
+    #
+    # Crée le reflet "bleu très sombre" en bas du rectangle
+    #
+    Lja.polygon(60,495,65,490,265,490,270,495)
+
+
+###########################################################################################################################################
+#
+#           f_BoutonDistanceDefinieDroite()
+#
+#       para : aucun
+#
+#       do :
+#               Crée le bouton de direction (de déplacement) du robot vers la droite sur une distance définie
+#
+#       return : rien
+#
+###########################################################################################################################################
+
+def f_BoutonDistanceDefinieDroite():
+    #
+    # Met le bleu du bouton
+    #
+    Lja.current_color("blue")
+    #
+    # Crée le rectangle basique
+    #
+    Lja.box(60,535,270,505)
+    #
+    # Crée la couleur "bleu très clair" pour le reflet à gauche du rectangle
+    #
+    Lja.current_color(77,107,206)
+    #
+    # Crée le reflet "bleu très clair" à gauche du rectangle
+    #
+    Lja.polygon(60,505,65,510,65,530,60,535)
+    #
+    # Crée la couleur "bleu clair" pour le reflet en haut du rectangle
+    #
+    Lja.current_color(59,114,155)
+    # 
+    # Crée le reflet "bleu clair" en haut du rectangle
+    #
+    Lja.polygon(60,505,65,510,265,510,270,505)
+    #
+    # Crée la couleur "bleu sombre" pour le reflet à droite du rectangle
+    #
+    Lja.current_color(5,5,81)
+    #
+    # Crée le reflet "bleu sombre" à droite du rectangle
+    #
+    Lja.polygon(270,505,265,510,265,530,270,535)
+    #
+    # Crée la couleur "bleu très sombre" en bas du rectangle
+    #
+    Lja.current_color(0,0,73)
+    #
+    # Crée le reflet "bleu très sombre" en bas du rectangle
+    #
+    Lja.polygon(60,535,65,530,265,530,270,535)
+
+###########################################################################################################################################
+#
+#           f_BoutonDistanceDefinieDroiteClic()
+#
+#       para : aucun
+#
+#       do :
+#               Crée le bouton de direction (de déplacement) du robot vers la droite sur une distance définie quand il est cliqué
+#
+#       return : rien
+#
+###########################################################################################################################################
+
+def f_BoutonDistanceDefinieDroiteClic():
+    #
+    # Met le bleu du bouton
+    #
+    Lja.current_color(18,23,186)
+    #
+    # Crée le rectangle basique
+    #
+    Lja.box(60,535,270,505)
+    #
+    # Crée la couleur "bleu très clair" pour le reflet à gauche du rectangle
+    #
+    Lja.current_color(55,83,175)
+    #
+    # Crée le reflet "bleu très clair" à gauche du rectangle
+    #
+    Lja.polygon(60,505,65,510,65,530,60,535)
+    #
+    # Crée la couleur "bleu clair" pour le reflet en haut du rectangle
+    #
+    Lja.current_color(40,85,119)
+    # 
+    # Crée le reflet "bleu clair" en haut du rectangle
+    #
+    Lja.polygon(60,505,65,510,265,510,270,505)
+    #
+    # Crée la couleur "bleu sombre" pour le reflet à droite du rectangle
+    #
+    Lja.current_color(3,3,50)
+    #
+    # Crée le reflet "bleu sombre" à droite du rectangle
+    #
+    Lja.polygon(270,505,265,510,265,530,270,535)
+    #
+    # Crée la couleur "bleu très sombre" en bas du rectangle
+    #
+    Lja.current_color(2,3,28)
+    #
+    # Crée le reflet "bleu très sombre" en bas du rectangle
+    #
+    Lja.polygon(60,535,65,530,265,530,270,535)

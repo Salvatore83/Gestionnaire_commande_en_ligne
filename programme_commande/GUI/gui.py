@@ -98,6 +98,14 @@ def f_creer_fenetre_projet():
         # Trace le bouton du milieu haut (vers le bas) d'une distance donnée dans l'interface graphique
         #
     logo.f_BoutonDistanceDefinieBas()
+        #
+        # Trace le bouton du milieu bas (vers la gauche) d'une distance donnée dans l'interface graphique
+        #
+    logo.f_BoutonDistanceDefinieGauche()
+        #
+        # Trace le bouton du bas (vers la droite) d'une distance donnée dans l'interface graphique
+        #
+    logo.f_BoutonDistanceDefinieDroite()
 
 ###########################################################################################################################################
 #
