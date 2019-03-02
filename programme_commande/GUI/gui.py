@@ -60,12 +60,12 @@ def f_creer_fenetre_attente():
 #
 #       return : rien
 #
-###########################################################################################################################################    
+###########################################################################################################################################
 
 def f_creer_fenetre_projet():
-    #
-    # Etablit la connexion
-    #
+        #
+        # Etablit la connexion
+        #
     OuvrirFenetre = 1
         #
         # Nettoie l'écran
@@ -115,6 +115,7 @@ def f_creer_fenetre_projet():
         # Trace le bouton du bas (vers la droite) d'une distance donnée dans l'interface graphique
         #
     logo.f_BoutonDistanceDefinieDroite()
+    return OuvrirFenetre
 
 ###########################################################################################################################################
 #

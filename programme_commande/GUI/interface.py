@@ -122,19 +122,18 @@ def f_BoutonGauche():
         #
         # Crée le reflet en bas
         #
-
-"""
+    #
+    # FLECHE
+    #
+        #
+        # Applique la couleur noire
+        #
     Lja.current_color("black")
         #
-        # Crée la flèche montante
+        # Crée le triangle
         #
-    Lja.line(80,180,60,200,10)
-        #
-        # Crée la flèche descendante
-        #
-    Lja.line(60,200,80,220,10)
-    Lja.polygon(60,195,65,200,60,205,55,200)
-"""
+    Lja.polygon(37,200,74,175,74,225)
+
 
 ###########################################################################################################################################
 #
@@ -193,7 +192,17 @@ def f_BoutonGaucheClic():
         #
         # Crée le reflet en bas
         #
-
+    #
+    # FLECHE
+    #
+        #
+        # Applique la couleur blanche
+        #
+    Lja.current_color("white")
+        #
+        # Crée le triangle
+        #
+    Lja.polygon(37,200,74,175,74,225)
 
 ###########################################################################################################################################
 #
@@ -249,6 +258,17 @@ def f_BoutonAvant():
         # Crée le reflet en bas
         #
     Lja.polygon(115,145,122,140,208,140,215,145)
+    #
+    # FLECHE
+    #
+        #
+        # Applique la couleur noire
+        #
+    Lja.current_color("black")
+        #
+        # Crée le triangle
+        #
+    Lja.polygon(165,70,140,115,190,115)
 
 ###########################################################################################################################################
 #
@@ -304,6 +324,18 @@ def f_BoutonAvantClic():
         # Crée le reflet en bas
         #
     Lja.polygon(115,145,122,140,208,140,215,145)
+    #
+    # FLECHE
+    #
+        #
+        # Applique la couleur blanche
+        #
+    Lja.current_color("white")
+        #
+        # Crée le triangle
+        #
+    Lja.polygon(165,70,140,115,190,115)
+
 
 ###########################################################################################################################################
 #
@@ -359,6 +391,17 @@ def f_BoutonDroite():
         # Crée le reflet en bas
         #
     Lja.polygon(220,250,227,245,313,245,320,250)
+    #
+    # FLECHE
+    #
+        #
+        # Applique la couleur noire
+        #
+    Lja.current_color("black")
+        #
+        # Crée le triangle
+        #
+    Lja.polygon(295,200,245,175,245,225)
 
 ###########################################################################################################################################
 #
