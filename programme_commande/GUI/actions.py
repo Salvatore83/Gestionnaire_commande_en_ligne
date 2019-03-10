@@ -123,6 +123,9 @@ def f_RecupCoord():
             #
             elif sourisy > 505 and sourisy < 535:
                 logo.f_BoutonDistanceDefinieBas()
+        elif sourisx > 685 and sourisx < 785 and sourisy > 485 and sourisy < 585:
+            logo.f_arret()
+            BoutonActif = 0
         #
         # Si l'on est dans aucun des boutons:
         #
@@ -138,6 +141,7 @@ def f_RecupCoord():
             logo.f_BoutonDistanceDefinieBas()
             logo.f_BoutonDistanceDefinieGauche()
             logo.f_BoutonDistanceDefinieDroite()
+            logo.f_arret()
     #
     # Si aucun bouton n'est cliqué:
     #
@@ -153,6 +157,7 @@ def f_RecupCoord():
         logo.f_BoutonDistanceDefinieBas()
         logo.f_BoutonDistanceDefinieGauche()
         logo.f_BoutonDistanceDefinieDroite()
+        logo.f_arret()
         #
         # Si la souris est sur le bouton carré de gauche:
         #
@@ -253,6 +258,9 @@ def f_RecupCoord():
                 # Le bouton rectangulaire du milieu-bas est cliqué.
                 #
                 BoutonActif = 8
+        elif sourisx > 685 and sourisx < 785 and sourisy > 485 and sourisy < 585:
+            logo.f_ArretClic()
+            BoutonActif = 9
 #
 # Associe au clic gauche la fonction precédemment créée.
 #

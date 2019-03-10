@@ -53,6 +53,32 @@ def f_arret():
         #
     Lja.line(695,495,770,570,20)
 
+###########################################################################################################################################
+#
+#           f_ArretClic()
+#
+#       para : aucun
+#
+#       do :
+#               Crée le logo "interdit" qui servira a couper toute action en cours du robot dans son apparence cliquée
+#
+#       return : rien
+#
+###########################################################################################################################################
+
+def f_ArretClic():
+        #
+        # Met du rouge
+        #
+    Lja.current_color(186,0,0)
+        #
+        # Trace le cercle du logo
+        #
+    Lja.circle(735,535,50,20) 
+        #
+        # Trace la barre transversale
+        #
+    Lja.line(695,495,770,570,20)
 #
 #
 #
@@ -401,7 +427,7 @@ def f_BoutonDroite():
         #
         # Crée le triangle
         #
-    Lja.polygon(295,200,245,175,245,225)
+    Lja.polygon(295,200,253,175,253,225)
 
 ###########################################################################################################################################
 #
@@ -457,6 +483,17 @@ def f_BoutonDroiteClic():
         # Crée le reflet en bas
         #
     Lja.polygon(220,250,227,245,313,245,320,250)
+    #
+    # FLECHE
+    #
+        #
+        # Applique la couleur blanche
+        #
+    Lja.current_color("white")
+        #
+        # Crée le triangle
+        #
+    Lja.polygon(295,200,253,175,253,225)
 
 ###########################################################################################################################################
 #
@@ -512,6 +549,17 @@ def f_BoutonArriere():
         # Crée le reflet en bas
         #
     Lja.polygon(115,355,122,350,208,350,215,355)
+    #
+    # FLECHE
+    #
+        #
+        # Applique la couleur noire
+        #
+    Lja.current_color("black")
+        #
+        # Crée le triangle
+        #   
+    Lja.polygon(165,330,140,288,190,288)
 
 ###########################################################################################################################################
 #
@@ -567,6 +615,18 @@ def f_BoutonArriereClic():
         # Crée le reflet en bas
         #
     Lja.polygon(115,355,122,350,208,350,215,355)
+    #
+    # FLECHE
+    #
+        #
+        # Applique la couleur blanche
+        #
+    Lja.current_color("white")
+        #
+        # Crée le triangle
+        #
+    Lja.polygon(165,330,140,288,190,288)
+
 
 #
 #
