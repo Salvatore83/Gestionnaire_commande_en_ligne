@@ -9,13 +9,13 @@
 
 ## Objectifs
 
-  Creer un logiciel tournant sur un ordinateur ou un telephone permettant de gerer un robot a distance.
+  Créer un logiciel tournant sur un ordinateur ou un telephone permettant de gerer un robot à distance.
 
 ************************************************************************
 
 ## Contraintes
 
-  Le projet doit etre ```obligatoirement``` et ```entierement``` code avec le language de programmation Python.
+  Le projet doit être ```obligatoirement``` et ```entierement``` code avec le language de programmation Python.
 
 ********************************************************************
 
