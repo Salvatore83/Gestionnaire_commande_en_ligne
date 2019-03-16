@@ -1,6 +1,11 @@
 
 def f_afficher_commande():
+    print("------------------------------------------")
     print('affichage commandes')
+    print("avancer --> fait avancer le robot")
+    print("ALED --> allume une LED")
+    print("ELED --> eteind une LED")
+    print("------------------------------------------")
 
 def f_gerer_commande_utilisateur():
 
@@ -20,6 +25,17 @@ def f_gerer_commande_utilisateur():
         # Si l'utilisateur veut faire avancer le robot
         #
         if commande == 'avancer':
+            valide = True
+        #
+        # Si l'utilisateur veut allumer la LED
+        #
+        if commande == 'ALED':
+            valide = True
+
+        #
+        # Si l'utilisateur veut eteindre la LED
+        #
+        if commande == 'ELED':
             valide = True
         #
         # Si l'utilisateur veut afficher la liste des commandes

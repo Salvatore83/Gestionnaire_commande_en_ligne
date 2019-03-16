@@ -12,12 +12,31 @@
 #
 
 import gestion_connexion_robot as CONrob
+import RPi.GPIO as GP
+import time
 
 
 def f_initialisation_capteurs():
 
-    return 'Succes'
+    try:
+        GP.setmode(GP.BOARD)
+        ledPin = 12
+        GP.setup(ledPin, GP.OUT)
+        return 'Succes'
+    except:
+        return 'Erreur'
 
+# allumer une LED
+def f_allumer_LED(para_LED):
+    print("La LED ", para_LED, " va s'allumer")
+    GP.output(para_LED, GP.HIGH)
+    print("La LED ",  para_LED, " est allumé")
+
+#eteindre une LED
+def f_eteindre_LED(para_LED):
+    print("La LED ", para_LED, " va s'éteindre")
+    GP.output(para_LED, GP.LOW)
+    print("LA LED", para_LED, "est éteinte")
 
 def f_gerer_action_robot(para_socket_client, para_commande):
 
@@ -38,5 +57,7 @@ def f_gerer_action_robot(para_socket_client, para_commande):
     elif para_commande == 'gauche':
         # f_tourner_robot(gauche)
         pass
+    elif para_commande == 'ALED':
+        f_allumer_LED()
 
     CONrob.f_envoyer_message(para_socket_client, 'Action terminee')
