@@ -58,6 +58,8 @@ def f_gerer_action_robot(para_socket_client, para_commande):
         # f_tourner_robot(gauche)
         pass
     elif para_commande == 'ALED':
-        f_allumer_LED()
+        f_allumer_LED(12)
+    elif para_commande == 'ELED':
+        f_eteindre_LED(12)
 
     CONrob.f_envoyer_message(para_socket_client, 'Action terminee')
