@@ -38,6 +38,11 @@ def f_gerer_commande_utilisateur():
         if commande == 'ELED':
             valide = True
         #
+        # Si l'utilisateur veut faire clignoter la LED
+        #
+        if commande == 'CLILED':
+            valide = True
+        #
         # Si l'utilisateur veut afficher la liste des commandes
         #
         if commande == 'li-com':
