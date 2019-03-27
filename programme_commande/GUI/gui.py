@@ -75,9 +75,17 @@ def f_creer_fenetre_projet():
         #
     Lja.clear_screen()
         #
+        # Indique le statut actuel du robot
+        #
+    act.f_StatutRobot()
+        #
         # Trace le logo "interdit" dans l'interface graphique
         #
     logo.f_arret()
+        #
+        # Trace le RADAR
+        #
+    logo.f_Radar()
         #
         # Trace le bouton de gauche dans l'interface graphique
         #

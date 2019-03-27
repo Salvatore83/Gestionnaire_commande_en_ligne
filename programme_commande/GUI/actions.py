@@ -26,6 +26,30 @@ from . import interface as logo
 #
 #
 
+RobotActif = 0
+
+###########################################################################################################################################
+#
+#           f_StatutRobot()
+#
+#       para : aucun
+#
+#       do :
+#               Affiche l'état d'occupation du robot (disponible / occupé)
+#       return : rien
+#
+###########################################################################################################################################
+
+def f_StatutRobot():
+    if RobotActif == 0:     
+        Lja.current_font("calibri", 14, "center", "black")
+        Lja.text(525,575,"Statut du robot: disponible")
+        Lja.text(524,575,"Statut du robot: disponible")
+    elif RobotActif == 1:
+        Lja.current_font("calibri", 14, "center", "red")
+        Lja.text(525,575,"Statut du robot: occupé")
+        Lja.text(524,575,"Statut du robot: occupé")
+
 ###########################################################################################################################################
 #
 #           f_RecupCoord()
@@ -290,6 +314,7 @@ def f_SimulationFinSignal():
     logo.f_BoutonDistanceDefinieHaut()
     logo.f_BoutonDistanceDefinieBas()
     logo.f_BoutonDistanceDefinieGauche()
+    logo.f_arret()
 #
 # Associe la touche v à la fonction précedemment créée
 #

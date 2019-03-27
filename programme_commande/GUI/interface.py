@@ -79,7 +79,36 @@ def f_ArretClic():
         # Trace la barre transversale
         #
     Lja.line(695,495,770,570,20)
+
 #
+#
+#
+#
+#
+# RADAR
+#
+#
+#
+#
+#
+
+###########################################################################################################################################
+#
+#           f_Radar()
+#
+#       para : aucun
+#
+#       do :
+#               Crée le radar
+#
+#       return : rien
+#
+###########################################################################################################################################
+
+def f_Radar():
+    Lja.current_color("green")
+    Lja.disc(533,115,100)
+
 #
 #
 #
@@ -1081,3 +1110,4 @@ def f_BoutonDistanceDefinieDroiteClic():
     # Crée le reflet "bleu très sombre" en bas du rectangle
     #
     Lja.polygon(60,535,65,530,265,530,270,535)
+
