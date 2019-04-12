@@ -48,6 +48,11 @@ def f_gerer_commande_utilisateur():
         if commande == 'li-com':
             f_afficher_commande()
         #
+        #
+        #
+        if commande == 'CALC':
+            valide = True
+        #
         # Si l'utilisateur veut quitter
         #
         if commande == 'quitter':

@@ -133,7 +133,7 @@ def f_recevoir_message(para_socket_client):
 #
 #           f_attendre_robot_pres()
 #
-#       para : socket serveur
+#       para : socket serveur et para_erreur (nombre d'erreur rencontrée)
 #
 #       do :
 #           attend que le robot soit pres
@@ -142,23 +142,28 @@ def f_recevoir_message(para_socket_client):
 #
 ###########################################################################################################################################
 
-def f_attendre_robot_pret(para_socket_serveur):
+def f_attendre_robot_pret(para_socket_serveur, para_erreur):
 
     message = '0'
     #
     # Tant que le robot n'est pas pret
     #
-    while message != 'Robot pret':
+    while message != 'Succes' and message != "Erreur":
         #
         # Attendre message et le decoder
         #
         message = para_socket_serveur.recv(1024)
         message = message.decode('utf8')
 
-    print('robot pret')
-
-
-
+    if message == 'Succes':
+        print('robot pret')
+    else:
+        print("Le robot a rencontré un problème.")
+        para_erreur += 1
+        if para_erreur < 3:
+            f_attendre_robot_pret(para_socket_serveur, para_erreur)
+        else:
+            quit()
 ###########################################################################################################################################
 #
 #           f_gerer_commande()

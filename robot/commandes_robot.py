@@ -12,7 +12,7 @@
 #
 
 import gestion_connexion_robot as CONrob
-import RPi.GPIO as GP
+# import RPi.GPIO as GP
 import time
 
 
@@ -24,6 +24,8 @@ def f_initialisation_capteurs():
         GP.setup(ledPin, GP.OUT)
         return 'Succes'
     except:
+        # changer en erreur lors du fonctionnement du programme. 
+        # comme je ne code pas avec le robot, obligé de faire ça
         return 'Erreur'
 
 # allumer une LED
@@ -78,4 +80,6 @@ def f_gerer_action_robot(para_socket_client, para_commande):
             f_eteindre_LED(12)
             i += 1
 
+    time.sleep(1)
     CONrob.f_envoyer_message(para_socket_client, 'Action terminee')
+    print("Action terminee.")

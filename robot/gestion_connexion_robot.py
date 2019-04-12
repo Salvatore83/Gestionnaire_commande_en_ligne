@@ -13,6 +13,7 @@
 
 import socket
 import commandes_robot as COMrob
+import time
 
 ###########################################################################################################################################
 #
@@ -143,7 +144,7 @@ def f_robot_initialisation(para_socket_client):
     #
     # Tant que l'initialisation des capteurs n'est pas valide
     #
-    while initialisation != 'Succes':
+    while initialisation != 'Succes' and initialisation != 'Erreur':
         #
         # Gere l'initialisation des capteurs
         #
@@ -152,7 +153,10 @@ def f_robot_initialisation(para_socket_client):
     #
     # Lorsque l'initialisation des capteurs s'est faite avec succes, envoie du message Robot pret, via le socket
     #
-    f_envoyer_message(para_socket_client, 'Robot pret')
+    f_envoyer_message(para_socket_client, initialisation)
+    if initialisation == 'Erreur':
+        time.sleep(1)
+        f_robot_initialisation(para_socket_client)
 
 
 

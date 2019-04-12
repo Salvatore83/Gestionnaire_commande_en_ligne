@@ -41,7 +41,7 @@ def f_ouvrir_gestionnaire():
     #
     # Attends que le robot puisse executer une action
     #
-    connexion.f_attendre_robot_pret(socket_client)
+    connexion.f_attendre_robot_pret(socket_client, 0)
     #
     # Affichage des commandes pour la premiere fois
     #
