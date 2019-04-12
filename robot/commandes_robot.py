@@ -25,7 +25,8 @@ def f_initialisation_capteurs():
         return 'Succes'
     except:
         # changer en erreur lors du fonctionnement du programme. 
-        # comme je ne code pas avec le robot, obligé de faire ça
+        # comme je ne code pas avec le robot, obligé de faire ça 
+        # Pour les tests, ce sera en 'Succes'
         return 'Erreur'
 
 # allumer une LED
@@ -39,6 +40,13 @@ def f_eteindre_LED(para_LED):
     print("La LED ", para_LED, " va s'éteindre")
     GP.output(para_LED, GP.LOW)
     print("LA LED", para_LED, "est éteinte")
+
+# Fais actionne le moteur des roues du robot
+def f_robot_moteur_roues(para_roue_gauche, para_roue_droite, para_pourcentage_gauche, para_pourcentage_droite):
+    pass
+
+def f_calculer_distance(para_US):
+    pass
 
 def f_gerer_action_robot(para_socket_client, para_commande):
 

@@ -138,7 +138,7 @@ def f_envoyer_message(para_socket_client, para_message):
 #
 ###########################################################################################################################################
 
-def f_robot_initialisation(para_socket_client):
+def f_robot_initialisation(para_socket_client, para_erreur):
 
     initialisation = ''
     #
@@ -155,8 +155,12 @@ def f_robot_initialisation(para_socket_client):
     #
     f_envoyer_message(para_socket_client, initialisation)
     if initialisation == 'Erreur':
-        time.sleep(1)
-        f_robot_initialisation(para_socket_client)
+        para_erreur += 1
+        if para_erreur > 3:
+            quit()
+        else:
+            time.sleep(1)
+            f_robot_initialisation(para_socket_client, para_erreur)
 
 
 

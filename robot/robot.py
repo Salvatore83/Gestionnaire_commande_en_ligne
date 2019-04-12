@@ -36,7 +36,7 @@ if __name__ == '__main__':
     #
     # Le robot initialise tous ces capteurs et regarde s'il n'a pas d'erreur en interne puis il envoie une reponse au gestionnaire
     #
-    CONrob.f_robot_initialisation(socket_client)
+    CONrob.f_robot_initialisation(socket_client, 0)
     print('initialisation reussie')
     #
     # La fonction qui gere toutes les actions du robot
