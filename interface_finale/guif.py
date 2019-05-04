@@ -1,13 +1,44 @@
 import PythonLja_18 as Lja
 import interfacef as img
 
-hauteur = 800
-largeur = 600
+###########################################################################################################################################
+#
+#           f_creer_fenetre_attente()
+#
+#       para : aucun
+#
+#       do :
+#               Crée la fenêtre
+#
+#       return : rien
+#
+###########################################################################################################################################
+
 
 def f_creer_fenetre_attente():
+    #
+    # Crée la fenêtre avec les dimensions données
+    #
     Lja.init_window("Projet", 800,600)
 
+###########################################################################################################################################
+#
+#           f_creer_fenetre_projet()
+#
+#       para : aucun
+#
+#       do :
+#               Affiche tous les éléments basiques (non cliqués s'ils peuvent l'être) de la fenêtre
+#
+#       return : rien
+#
+###########################################################################################################################################
+
+
 def f_creer_fenetre_projet():
+    #
+    # Affiche tous les éléments qui constituent la fenêtre
+    #
     img.f_fondnoir()
     img.f_fondcroix()
     img.f_croixhaut()
@@ -18,10 +49,20 @@ def f_creer_fenetre_projet():
     img.f_carreo()
     img.f_carrevi()
     img.f_carreve()
-    """
-    img.f_tracer_image(img.liste[0],390,300,200,400)
-    img.f_tracer_image(img.liste [1],80,80,200,550)
-    """
+
+###########################################################################################################################################
+#
+#           f_RecupCoord()
+#
+#       para : aucun
+#
+#       do :
+#               Fait durer la fenêtre
+#
+#       return : rien
+#
+###########################################################################################################################################
+
 
 def f_ouvrir_gestionnaire():
     f_creer_fenetre_attente()
