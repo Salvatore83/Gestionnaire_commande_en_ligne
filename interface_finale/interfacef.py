@@ -44,13 +44,6 @@ def f_fondnoir():
 #
 ###########################################################################################################################################
 
-"""
-def f_tracer_image(para_nom, width, height, pos_x, pos_y):
-    global image
-    image = Lja.image(para_nom, width, height)
-    Lja.image_draw(pos_x, pos_y, image)
-"""
-
 def f_fondcroix():
     global fondcroix
     #
@@ -176,6 +169,14 @@ def f_carreve():
     #
     Lja.image_draw(750,95, carreve)
 
+def f_layers():
+    global degrade
+    degrade = Lja.image("images/degrade.png",800,50)
+    Lja.image_draw(400,25,degrade)
+    global layergauchecarres
+    layergauchecarres = Lja.image("images/layergauchecarres.png",15,115)
+    Lja.image_draw(425,105,layergauchecarres)
+
 ###########################################################################################################################################
 #
 #           f_RecupCoord()
@@ -290,6 +291,21 @@ def f_RecupCoord():
         #
         Lja.image_draw(200,384,tbasclic)
         BoutonActif = 8
+
+def indications():
+    Lja.current_font("calibri",20,"center", "lightblue")
+    Lja.text(60,400,"Bleu :")
+    Lja.current_font("calibri",20,"center", "orange")
+    Lja.text(75,430,"Orange :")
+    Lja.current_font("calibri",20,"center", "purple")
+    Lja.text(67,460,"Violet :")
+    Lja.current_font("calibri",20,"center", "green")
+    Lja.text(60,490,"Vert :")
+    Lja.current_font("calibri",20,"center", "white")
+    Lja.text(270,400," Action 1, remplir dans interfacef")
+    Lja.text(170,430," Action 2")
+    Lja.text(155,460," Action 1")
+    Lja.text(145,490," Action 4")
 
 #
 # Associe le clic gauche au fait de pouvoir cliquer
