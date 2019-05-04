@@ -174,7 +174,7 @@ def f_layers():
     degrade = Lja.image("images/degrade.png",800,50)
     Lja.image_draw(400,25,degrade)
     global layergauchecarres
-    layergauchecarres = Lja.image("images/layergauchecarres.png",15,115)
+    layergauchecarres = Lja.image("images/layergauchecarres.png",15,99)
     Lja.image_draw(425,105,layergauchecarres)
 
 ###########################################################################################################################################
