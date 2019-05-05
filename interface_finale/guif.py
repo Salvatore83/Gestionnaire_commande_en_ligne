@@ -1,5 +1,6 @@
 import PythonLja_18 as Lja
 import interfacef as img
+import connexion_gestion as cg
 
 ###########################################################################################################################################
 #
@@ -20,7 +21,10 @@ def f_creer_fenetre_attente():
     # Crée la fenêtre avec les dimensions données
     #
     Lja.init_window("Projet", 800,600)
-
+    socket_serveur = cg.f_creer_serveur()
+    socket_client = cg.f_accepter_connexion(socket_serveur)
+    f_creer_fenetre_projet()
+    
 ###########################################################################################################################################
 #
 #           f_creer_fenetre_projet()
