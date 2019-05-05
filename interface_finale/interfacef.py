@@ -176,6 +176,15 @@ def f_layers():
     global layergauchecarres
     layergauchecarres = Lja.image("images/layergauchecarres.png",15,99)
     Lja.image_draw(425,105,layergauchecarres)
+    global layerhautcarres
+    layerhautcarres = Lja.image("images/layerhautcarres.png",368,50)
+    Lja.image_draw(606,150,layerhautcarres)
+    global layerbascroix
+    layerbascroix = Lja.image("images/layerbascroix.png",405,50)
+    Lja.image_draw(212,310,layerbascroix)
+    global layerdroitecroix
+    layerdroitecroix = Lja.image("images/layerdroitecroix.png",150,285)
+    Lja.image_draw(412,448,layerdroitecroix)
 
 ###########################################################################################################################################
 #
