@@ -23,8 +23,10 @@ def f_creer_fenetre_attente():
     Lja.init_window("Projet", 800,600)
     socket_serveur = cg.f_creer_serveur()
     socket_client = cg.f_accepter_connexion(socket_serveur)
-    f_creer_fenetre_projet()
-    
+    cg.f_envoyer_message(socket_client, "1")
+    # cg.f_attendre_robot_pret(socket_client, 0)
+    f_creer_fenetre_projet(socket_serveur, socket_client)
+
 ###########################################################################################################################################
 #
 #           f_creer_fenetre_projet()
@@ -39,11 +41,11 @@ def f_creer_fenetre_attente():
 ###########################################################################################################################################
 
 
-def f_creer_fenetre_projet():
+def f_creer_fenetre_projet(para_socket_serveur, para_socket_client):
     #
     # Affiche tous les éléments qui constituent la fenêtre
     #
-    img.f_fondnoir()
+    img.f_fondnoir(para_socket_serveur, para_socket_client)
     img.f_fondcroix()
     img.f_croixhaut()
     img.f_croixgauche()
@@ -72,7 +74,7 @@ def f_creer_fenetre_projet():
 
 def f_ouvrir_gestionnaire():
     f_creer_fenetre_attente()
-    Lja.assoc_button(3, f_creer_fenetre_projet)
+    # Lja.assoc_button(3, f_creer_fenetre_projet)
     Lja.main_loop()
 
 f_ouvrir_gestionnaire()

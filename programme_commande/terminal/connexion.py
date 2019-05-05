@@ -103,7 +103,7 @@ def f_envoyer_message(para_socket_client, para_message):
 
 ###########################################################################################################################################
 #
-#           f_attendre_robot_pres()
+#           f_recevoir_message()
 #
 #       para : socket client
 #
@@ -164,6 +164,8 @@ def f_attendre_robot_pret(para_socket_serveur, para_erreur):
             f_attendre_robot_pret(para_socket_serveur, para_erreur)
         else:
             quit()
+
+
 ###########################################################################################################################################
 #
 #           f_gerer_commande()

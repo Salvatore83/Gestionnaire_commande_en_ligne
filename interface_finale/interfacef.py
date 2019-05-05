@@ -1,4 +1,5 @@
 import PythonLja_18 as Lja
+import connexion_gestion as cg
 
 largeur = 800
 hauteur = 600
@@ -17,7 +18,11 @@ global BoutonActif
 #
 ###########################################################################################################################################
 
-def f_fondnoir():
+def f_fondnoir(para_socket_serveur, para_socket_client):
+    global socket_serveur
+    global socket_client
+    socket_client = para_socket_client
+    socket_serveur = para_socket_serveur
         #
         # Nettoie l'écran
         #
@@ -287,7 +292,7 @@ def f_RecupCoord():
     #
     elif 240 < sourisx < 307 and 104 < sourisy < 182:
         #
-        # Applique l'apparence cliquée 
+        # Applique l'apparence cliquée
         #
         Lja.image_draw(273,457,tdroiteclic)
         BoutonActif = 7
@@ -301,6 +306,22 @@ def f_RecupCoord():
         Lja.image_draw(200,384,tbasclic)
         BoutonActif = 8
 
+    #
+    # gestion des commandes
+    #
+    if BoutonActif != 0:
+        if BoutonActif == 5:
+            message = "avancer"
+        elif BoutonActif == 6:
+            message = "gauche"
+        elif BoutonActif == 7:
+            message = "droite"
+        elif BoutonActif == 8:
+            message = "reculer"
+        cg.f_envoyer_message(socket_client, message)
+
+
+
 def indications():
     Lja.current_font("calibri",20,"center", "lightblue")
     Lja.text(60,400,"Bleu :")
@@ -311,12 +332,12 @@ def indications():
     Lja.current_font("calibri",20,"center", "green")
     Lja.text(60,490,"Vert :")
     Lja.current_font("calibri",20,"center", "white")
-    Lja.text(270,400," Action 1, remplir dans interfacef")
-    Lja.text(170,430," Action 2")
-    Lja.text(155,460," Action 1")
-    Lja.text(145,490," Action 4")
+    Lja.text(270,400,"faire un carré")
+    Lja.text(170,430,"manger des choux")
+    Lja.text(155,460,"faire demi-tour")
+    Lja.text(145,490,"danser")
 
 #
 # Associe le clic gauche au fait de pouvoir cliquer
-# 
+#
 Lja.assoc_button(1,f_RecupCoord)
