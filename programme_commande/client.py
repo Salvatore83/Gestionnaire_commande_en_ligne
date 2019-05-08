@@ -16,6 +16,10 @@ message.decode('utf8')
 print(message)
 
 robot_pret = ''
+while True:
+    message = socket_client.recv(1028)
+    message = message.decode("utf8")
+    print(message)
 
 while robot_pret != 'pret':
     robot_pret = input('Le robot est pret ? [oui/non]')
