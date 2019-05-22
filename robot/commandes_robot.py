@@ -12,8 +12,9 @@
 #
 
 import gestion_connexion_robot as CONrob
-# import RPi.GPIO as GP
+import RPi.GPIO as GP
 import time
+import datetime
 
 
 def f_initialisation_capteurs():
@@ -41,7 +42,7 @@ def f_eteindre_LED(para_LED):
     GP.output(para_LED, GP.LOW)
     print("LA LED", para_LED, "est éteinte")
 
-# Fais actionne le moteur des roues du robot
+'''# Fais actionne le moteur des roues du robot
 def f_robot_moteur_roues():
 
     GPIO.setmode(GPIO.BOARD)   ##je prefere la numerotation BOARD plutot que BCM
@@ -88,6 +89,26 @@ def f_robot_moteur_roues():
     pwm.stop()    ## interruption du pwm
 
     GPIO.cleanup()
+'''
+
+def f_moteur():
+
+    servo_pin = 12
+
+    GP.setup(servo_pin, GP.OUT)
+
+    pwm = GP.PWM(servo_pin, 50)
+
+    rapport = 5
+    second_debut = datetime.datetime.now().second
+    pwm.start(rapport)
+    avancer = True
+    while avancer == True:
+        pwm.ChangeDutyCycle(2)
+        maintenant = datetime.datetime.now().second
+        print(maintenant)
+        if (second_debut + 5) == maintenant:
+            avancer = False
 
 
 def f_calculer_distance(para_US):
@@ -101,7 +122,7 @@ def f_gerer_action_robot(para_socket_client, para_commande):
     # Grosse comparaison des commandes demandées par le terminal
     #
     if para_commande == 'avancer':
-        # f_avancer_robot()
+        f_moteur()
         CONrob.f_envoyer_message(para_socket_client, 'En cours')
     elif para_commande == 'reculer':
         # f_reculer_robot()
