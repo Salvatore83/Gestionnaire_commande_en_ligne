@@ -107,7 +107,7 @@ def f_moteur():
         pwm.ChangeDutyCycle(2)
         maintenant = datetime.datetime.now().second
         print(maintenant)
-        if (second_debut + 5) == maintenant:
+        if (second_debut + 5) < maintenant:
             avancer = False
 
 
