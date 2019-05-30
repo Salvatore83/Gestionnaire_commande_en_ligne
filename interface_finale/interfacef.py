@@ -310,14 +310,49 @@ def f_RecupCoord():
     # gestion des commandes
     #
     if BoutonActif != 0:
+        #
+        # Si le bouton actif est le cinquième
+        #
         if BoutonActif == 5:
             message = "avancer"
+        #
+        # Si le bouton actif est le sixième
+        #
         elif BoutonActif == 6:
             message = "gauche"
+        #
+        # Si le bouton actif est le septième
+        #
         elif BoutonActif == 7:
             message = "droite"
+        #
+        # Si le bouton actif est le huitième
+        #
         elif BoutonActif == 8:
             message = "reculer"
+        #
+        # Si le bouton actif est le premier
+        #
+        elif BoutonActif == 1:
+            message = "ALED"
+        #
+        # Si le bouton actif est le deuxième
+        #
+        elif BoutonActif == 2:
+            message = "ELED"
+        #
+        # Si le bouton actif est le troisème
+        #
+        elif BoutonActif == 3:
+            message = "CLILED"
+        #
+        # Si le bouton actif est le quatrième
+        #
+        elif BoutonActif == 4:
+            #
+            # Rien d'attribué pour le moment
+            #
+            pass
         cg.f_envoyer_message(socket_client, message)
 
 
@@ -332,10 +367,10 @@ def indications():
     Lja.current_font("calibri",20,"center", "green")
     Lja.text(60,490,"Vert :")
     Lja.current_font("calibri",20,"center", "white")
-    Lja.text(270,400,"faire un carré")
-    Lja.text(170,430,"manger des choux")
-    Lja.text(155,460,"faire demi-tour")
-    Lja.text(145,490,"danser")
+    Lja.text(270,400,"ALED")
+    Lja.text(170,430,"ELED")
+    Lja.text(155,460,"CLILED")
+    Lja.text(145,490,"rien")
 
 #
 # Associe le clic gauche au fait de pouvoir cliquer
