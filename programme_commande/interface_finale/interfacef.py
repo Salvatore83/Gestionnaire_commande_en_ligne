@@ -1,5 +1,5 @@
-import PythonLja_18 as Lja
-import connexion_gestion as cg
+from . import PythonLja_18 as Lja
+from . import connexion_gestion as cg
 
 largeur = 800
 hauteur = 600
@@ -54,7 +54,7 @@ def f_fondcroix():
     #
     # Importe l'image correspondante et la redimensionne
     #
-    fondcroix = Lja.image("images/rectangle.png", 390,300)
+    fondcroix = Lja.image("interface_finale/images/rectangle.png", 390,300)
     #
     # Applique l'image aux coordonnées demandées
     #
@@ -78,7 +78,7 @@ def f_croixhaut():
     #
     # Importe l'image correspondante et la redimensionne
     #
-    thaut = Lja.image("images/thaut.png",80,80)
+    thaut = Lja.image("interface_finale/images/thaut.png",80,80)
     #
     # Applique l'image aux coordonnées demandées
     #
@@ -89,7 +89,7 @@ def f_croixgauche():
     #
     # Importe l'image correspondante et la redimensionne
     #
-    tgauche = Lja.image("images/tgauche.png",80,80)
+    tgauche = Lja.image("interface_finale/images/tgauche.png",80,80)
     #
     # Applique l'image aux coordonnées demandées
     #
@@ -100,7 +100,7 @@ def f_croixdroite():
     #
     # Importe l'image correspondante et la redimensionne
     #
-    tdroite = Lja.image("images/tdroite.png",80,80)
+    tdroite = Lja.image("interface_finale/images/tdroite.png",80,80)
     #
     # Applique l'image aux coordonnées demandées
     #
@@ -111,7 +111,7 @@ def f_croixbas():
     #
     # Importe l'image correspondante et la redimensionne
     #
-    tbas = Lja.image("images/tbas.png",80,80)
+    tbas = Lja.image("interface_finale/images/tbas.png",80,80)
     #
     # Applique l'image aux coordonnées demandées
     #
@@ -135,7 +135,7 @@ def f_carreb():
     #
     # Importe l'image correspondante et la redimensionne
     #
-    carreb = Lja.image("images/bleu.png",80,80)
+    carreb = Lja.image("interface_finale/images/bleu.png",80,80)
     #
     # Applique l'image aux coordonnées demandées
     #
@@ -146,7 +146,7 @@ def f_carreo():
     #
     # Importe l'image correspondante et la redimensionne
     #
-    carreo = Lja.image("images/orange.png",80,80)
+    carreo = Lja.image("interface_finale/images/orange.png",80,80)
     #
     # Applique l'image aux coordonnées demandées
     #
@@ -157,7 +157,7 @@ def f_carrevi():
     #
     # Importe l'image correspondante et la redimensionne
     #
-    carrevi = Lja.image("images/violet.png",80,80)
+    carrevi = Lja.image("interface_finale/images/violet.png",80,80)
     #
     # Applique l'image aux coordonnées demandées
     #
@@ -168,7 +168,7 @@ def f_carreve():
     #
     # Importe l'image correspondante et la redimensionne
     #
-    carreve = Lja.image("images/vert.png",80,80)
+    carreve = Lja.image("interface_finale/images/vert.png",80,80)
     #
     # Applique l'image aux coordonnées demandées
     #
@@ -176,19 +176,19 @@ def f_carreve():
 
 def f_layers():
     global degrade
-    degrade = Lja.image("images/degrade.png",800,50)
+    degrade = Lja.image("interface_finale/images/degrade.png",800,50)
     Lja.image_draw(400,25,degrade)
     global layergauchecarres
-    layergauchecarres = Lja.image("images/layergauchecarres.png",15,99)
+    layergauchecarres = Lja.image("interface_finale/images/layergauchecarres.png",15,99)
     Lja.image_draw(425,105,layergauchecarres)
     global layerhautcarres
-    layerhautcarres = Lja.image("images/layerhautcarres.png",368,50)
+    layerhautcarres = Lja.image("interface_finale/images/layerhautcarres.png",368,50)
     Lja.image_draw(606,150,layerhautcarres)
     global layerbascroix
-    layerbascroix = Lja.image("images/layerbascroix.png",405,50)
+    layerbascroix = Lja.image("interface_finale/images/layerbascroix.png",405,50)
     Lja.image_draw(212,310,layerbascroix)
     global layerdroitecroix
-    layerdroitecroix = Lja.image("images/layerdroitecroix.png",150,285)
+    layerdroitecroix = Lja.image("interface_finale/images/layerdroitecroix.png",150,285)
     Lja.image_draw(412,448,layerdroitecroix)
 
 ###########################################################################################################################################
@@ -218,21 +218,21 @@ def f_RecupCoord():
     # Déclare et importe toutes les apparences cliquées des boutons
     #
     global carrebclic
-    carrebclic = Lja.image("images/bleuclic.png",80,80)
+    carrebclic = Lja.image("interface_finale/images/bleuclic.png",80,80)
     global carreoclic
-    carreoclic = Lja.image("images/orangeclic.png",80,80)
+    carreoclic = Lja.image("interface_finale/images/orangeclic.png",80,80)
     global carrevioclic
-    carrevioclic = Lja.image("images/violetclic.png",80,80)
+    carrevioclic = Lja.image("interface_finale/images/violetclic.png",80,80)
     global carreverclic
-    carreverclic = Lja.image("images/vertclic.png",80,80)
+    carreverclic = Lja.image("interface_finale/images/vertclic.png",80,80)
     global thautclic
-    thautclic = Lja.image("images/thautclic.png",80,80)
+    thautclic = Lja.image("interface_finale/images/thautclic.png",80,80)
     global tgaucheclic
-    tgaucheclic = Lja.image("images/tgaucheclic.png",80,80)
+    tgaucheclic = Lja.image("interface_finale/images/tgaucheclic.png",80,80)
     global tdroiteclic
-    tdroiteclic = Lja.image("images/tdroiteclic.png",80,80)
+    tdroiteclic = Lja.image("interface_finale/images/tdroiteclic.png",80,80)
     global tbasclic
-    tbasclic = Lja.image("images/tbasclic.png",80,80)
+    tbasclic = Lja.image("interface_finale/images/tbasclic.png",80,80)
     #
     # Si le curseur est dans le carré bleu:
     #
@@ -367,10 +367,10 @@ def indications():
     Lja.current_font("calibri",20,"center", "green")
     Lja.text(60,490,"Vert :")
     Lja.current_font("calibri",20,"center", "white")
-    Lja.text(270,400,"ALED")
-    Lja.text(170,430,"ELED")
-    Lja.text(155,460,"CLILED")
-    Lja.text(145,490,"rien")
+    Lja.text(200,400,"ALED")
+    Lja.text(200,430,"ELED")
+    Lja.text(200,460,"CLILED")
+    Lja.text(200,490,"rien")
 
 #
 # Associe le clic gauche au fait de pouvoir cliquer
