@@ -21,8 +21,10 @@ def f_initialisation_capteurs():
 
     try:
         GP.setmode(GP.BOARD)
-        ledPin = 12
-        GP.setup(ledPin, GP.OUT)
+        GP.setup(15, GP.OUT)
+        GP.setup(13, GP.OUT)
+        GP.setup(11, GP.OUT)
+        f_allumer_LED(13)
         return 'Succes'
     except:
         # changer en erreur lors du fonctionnement du programme.
@@ -99,12 +101,12 @@ def f_moteur():
 
     pwm = GP.PWM(servo_pin, 50)
 
-    rapport = 5
+    rapport = 3
     second_debut = datetime.datetime.now().second
     pwm.start(rapport)
     avancer = True
     while avancer == True:
-        pwm.ChangeDutyCycle(2)
+        pwm.ChangeDutyCycle(1)
         maintenant = datetime.datetime.now().second
         print(maintenant)
         if (second_debut + 5) < maintenant:
@@ -117,7 +119,7 @@ def f_calculer_distance(para_US):
 def f_gerer_action_robot(para_socket_client, para_commande):
 
     print('action recue')
-
+    f_allumer_LED(11)
     #
     # Grosse comparaison des commandes demandées par le terminal
     #
@@ -137,23 +139,24 @@ def f_gerer_action_robot(para_socket_client, para_commande):
     # Allume la LED
     #
     elif para_commande == 'ALED':
-        f_allumer_LED(12)
+        f_allumer_LED(15)
     #
     # Eteind la LED
     #
     elif para_commande == 'ELED':
-        f_eteindre_LED(12)
+        f_eteindre_LED(15)
     #
     # Fais clignoter la LED
     #
     elif para_commande == 'CLILED':
         i = 0
         while i < 4:
-            f_allumer_LED(12)
+            f_allumer_LED(15)
             time.sleep(2)
-            f_eteindre_LED(12)
+            f_eteindre_LED(15)
             i += 1
 
     time.sleep(1)
     CONrob.f_envoyer_message(para_socket_client, 'Action terminee')
     print("Action terminee.")
+    f_eteindre_LED(11)
