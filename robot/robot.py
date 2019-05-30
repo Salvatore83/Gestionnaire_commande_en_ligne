@@ -25,7 +25,7 @@ if __name__ == '__main__':
     #
     # Connecte le socket client a l'adresse via le port
     #
-    host = 'localhost'
+    host = '192.168.43.107'
     port = 5566
     socket_client = CONrob.f_connecter_socket(socket_client, host, port)
     #
